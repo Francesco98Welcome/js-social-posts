@@ -146,9 +146,9 @@ for (let i = 0; i < posts.length; i++) {
     aLink.classList.add('like-button');
     
 
-    aLink.innerHTML = ` 
-         <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i> 
-         `
+    aLink.innerHTML = 
+        ` <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>  `
+                
     const spanLikes = document.createElement('span');
     spanLikes.classList.add('like-button__label');
     spanLikes.innerHTML = 'Mi piace'
@@ -169,6 +169,11 @@ for (let i = 0; i < posts.length; i++) {
 
     function myFunction(x) {
         console.log('ciao');
+        count++;
+        console.log(count);
+        likesCounter.innerHTML = '';
+        posts[i].likes = '';
+        likesCounter.innerHTML += likesCounter.innerHTML += 'Piace a ' + '<b>' + posts[i].likes + count  + '</b>' + ' persone';
     }
 
 }
