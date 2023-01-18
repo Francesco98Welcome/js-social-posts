@@ -167,13 +167,13 @@ for (let i = 0; i < posts.length; i++) {
     let count = posts[i].likes;
     console.log(count);
 
-    function myFunction(x) {
+    function myFunction() {
         console.log('ciao');
         count++;
         console.log(count);
         likesCounter.innerHTML = '';
         posts[i].likes = '';
-        likesCounter.innerHTML += likesCounter.innerHTML += 'Piace a ' + '<b>' + posts[i].likes + count  + '</b>' + ' persone';
+        likesCounter.innerHTML += likesCounter.innerHTML += 'Piace a ' + '<b>' + posts[i].likes + count + '</b>' + ' persone';
     }
 
 }
