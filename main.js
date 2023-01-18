@@ -161,19 +161,35 @@ for (let i = 0; i < posts.length; i++) {
     likes.append(likesCounter);
 
 
+   
+
     likesCta.addEventListener('click', myFunction);
 
 
     let count = posts[i].likes;
     console.log(count);
 
-    function myFunction() {
-        console.log('ciao');
-        count++;
-        console.log(count);
-        likesCounter.innerHTML = '';
-        posts[i].likes = '';
-        likesCounter.innerHTML += likesCounter.innerHTML += 'Piace a ' + '<b>' + posts[i].likes + count + '</b>' + ' persone';
-    }
 
+    function myFunction() {
+        /*count++;
+        console.log(count);
+        
+        likesCounter.innerHTML = '';*/
+        //posts[i].likes = '';
+        spanLikes.classList.add('like-button--liked');
+        
+        if (count > posts[i].likes) {
+           count--;
+           const arrId = [];
+           arrId.push(posts[i].id);
+           console.log(arrId);
+        } else {
+            count++;
+            spanLikes.classList.remove('like-button--liked');
+        }
+
+        likesCounter.innerHTML = /*likesCounter.innerHTML +=*/ 'Piace a ' + '<b>' + count + '</b>' + ' persone';
+        
+    }
+    
 }
