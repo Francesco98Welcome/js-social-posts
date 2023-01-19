@@ -176,16 +176,18 @@ for (let i = 0; i < posts.length; i++) {
         
         likesCounter.innerHTML = '';*/
         //posts[i].likes = '';
-        spanLikes.classList.add('like-button--liked');
+        
+       // spanLikes.classList.add('like-button--liked');
         
         if (count > posts[i].likes) {
            count--;
            const arrId = [];
            arrId.push(posts[i].id);
            console.log(arrId);
+           spanLikes.classList.remove('like-button--liked');
         } else {
             count++;
-            spanLikes.classList.remove('like-button--liked');
+            spanLikes.classList.add('like-button--liked');
         }
 
         likesCounter.innerHTML = /*likesCounter.innerHTML +=*/ 'Piace a ' + '<b>' + count + '</b>' + ' persone';
