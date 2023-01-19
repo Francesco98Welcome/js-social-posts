@@ -184,6 +184,7 @@ for (let i = 0; i < posts.length; i++) {
            const arrId = [];
            arrId.push(posts[i].id);
            console.log(arrId);
+           console.log("l'id della foto è " + arrId);
            spanLikes.classList.remove('like-button--liked');
         } else {
             count++;
