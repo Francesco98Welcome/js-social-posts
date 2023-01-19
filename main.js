@@ -181,14 +181,14 @@ for (let i = 0; i < posts.length; i++) {
         
         if (count > posts[i].likes) {
            count--;
-           const arrId = [];
-           arrId.push(posts[i].id);
-           console.log(arrId);
-           console.log("l'id della foto è " + arrId);
            spanLikes.classList.remove('like-button--liked');
         } else {
             count++;
             spanLikes.classList.add('like-button--liked');
+            const arrId = [];
+            arrId.push(posts[i].id);
+            console.log(arrId);
+            console.log("l'id della foto è " + arrId);
         }
 
         likesCounter.innerHTML = /*likesCounter.innerHTML +=*/ 'Piace a ' + '<b>' + count + '</b>' + ' persone';
