@@ -58,8 +58,49 @@ const posts = [
 
 console.log(posts);
 
-
+// METODO FOREACH 
+/*
 let container = document.querySelector('#container');
+
+posts.forEach((post, i ) => {
+    container.innerHTML += 
+        `<div class="post">
+        <div class="post__header">
+            <div class="post-meta">                    
+                <div class="post-meta__icon">
+                    <img class="profile-pic" src=${post.author.image} alt="${post.author.name}">                    
+                </div>
+                <div class="post-meta__data">
+                    <div class="post-meta__author">${post.author.name}</div>
+                    <div class="post-meta__time">${post.created}</div>
+                </div>                    
+            </div>
+        </div>
+        <div class="post__text">${post.content}</div>
+        <div class="post__image">
+            <img src=${post.media} alt="Post ">
+        </div>
+        <div class="post__footer">
+            <div class="likes js-likes">
+                <div class="likes__cta">
+                    <a class="like-button  js-like-button" href="#" data-postid="1">
+                        <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                        <span class="like-button__label">Mi Piace</span>
+                    </a>
+                </div>
+                <div class="likes__counter">
+                    Piace a <b id="like-counter-1" class="js-likes-counter">${post.likes}</b> persone
+                </div>
+            </div> 
+        </div>            
+    </div>`
+})
+*/
+
+
+
+
+// METODO CICLO FOR 
 
 
 for (let i = 0; i < posts.length; i++) {
@@ -160,11 +201,12 @@ for (let i = 0; i < posts.length; i++) {
     likesCounter.innerHTML += 'Piace a ' + '<b>' + posts[i].likes  + '</b>' + ' persone';
     likes.append(likesCounter);
 
-
    
 
-    likesCta.addEventListener('click', myFunction);
+    // FACCIAMO SCATTARE LA FUNZIONE AL CLICK DEI LIKES
 
+
+    likesCta.addEventListener('click', myFunction);
 
     let count = posts[i].likes;
     console.log(count);
@@ -191,7 +233,7 @@ for (let i = 0; i < posts.length; i++) {
             console.log("l'id della foto è " + arrId);
         }
 
-        likesCounter.innerHTML = /*likesCounter.innerHTML +=*/ 'Piace a ' + '<b>' + count + '</b>' + ' persone';
+        likesCounter.innerHTML = 'Piace a ' + '<b>' + count + '</b>' + ' persone';
         
     }
     
